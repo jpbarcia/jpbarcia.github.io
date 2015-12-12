@@ -1,2 +1,2 @@
 # jpbarcia.github.io
-Portafolio Personal
+Personal Portfolio
