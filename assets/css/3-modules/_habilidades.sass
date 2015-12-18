@@ -1,0 +1,100 @@
+#habilidades
+  background-color: black
+  color: white
+
+$porcentaje: 99
+$tamano: 75px
+$ancho: $tamano*3/5
+$alto: $tamano/3
+$grados: (180/100*$porcentaje)*1deg
+$progress-color: lighten(green, 15%)
+
+.fill, .radial-progress-half, .radial-progress-full, .radial-shadow
+  height: 100%
+  width: 100%
+  position: absolute
+  border-radius: 50%
+  top: 0
+  z-index: 0
+  left: 0
+.skill-container
+  div
+    transition: all 0.75s ease
+  .radial
+    height: $tamano
+    width: $tamano
+    position: relative
+    border-radius: 50%
+    background-color: #d6dadc
+    z-index: 0
+    .fill
+      background-color: $progress-color
+      clip: rect(0,$tamano/2, $tamano, 0)
+    &-progress
+      &-full
+        clip: rect(0, $tamano, $tamano, $tamano/2)
+        //transform: rotate($grados)
+        //.fill
+          //transform: rotate($grados)
+      &-half
+        clip: rect(0,$tamano, $tamano, $tamano/2)
+        //.fill
+
+    &-overlay
+      display: flex
+      height: 74%
+      width: 74%
+      position: absolute
+      left: 13%
+      top: 13%
+      overflow: hidden
+      border-radius: 50%
+      justify-content: center
+      background-color: white
+      box-shadow: 0 0 7px rgba(0,0,0,0.60)
+      .progress-header
+        display: flex
+        overflow: hidden
+        margin: auto
+        width: $ancho
+        height: $alto
+        //background-color: red
+      .numbers
+        display: flex
+        flex-wrap: wrap
+        //min-width: ($porcentaje+1)*$ancho
+        margin-top: -$alto
+        span
+          display: inline-block
+          width: $ancho
+          max-width: $ancho
+          min-width: $ancho
+          height: $alto
+          color: $black-color
+          font-size: $tamano/5
+          font-weight: 600
+          text-align: center
+    &-shadow
+      box-shadow: 0 0 7px rgba(0,0,0,0.60) inset
+
+
+$porcentaje: 0
+
+@while $porcentaje < 100
+  $grados: (180/100*$porcentaje)*1deg
+  .skill-container[data-skill="#{$porcentaje}"]
+    .radial-progress-full
+      transform: rotate($grados)
+    .fill
+      transform: rotate($grados)
+    .numbers
+      min-width: ($porcentaje+1)*$ancho
+  $porcentaje: $porcentaje + 1
+//Z INDEXs
+//shadow: 100
+//overlay: 80
+//back izquierda:
+//back derecha:
+//progress izquierda:
+//progress derecha:
+//background-image: linear-gradient(to right,rgba(0,0,0,0),rgba(0,0,0,0) 50%,green 50%, green 100%)
