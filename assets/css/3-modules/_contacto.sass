@@ -1,0 +1,132 @@
+$contacto-bg-color: rgba(54, 161, 106, 0.9)
+
+#contacto
+  color: white
+  height: 100%
+  display: flex
+  min-height: 100%
+  flex-direction: column
+  justify-content: center
+  background-color: $contacto-bg-color
+  background-image: url("/assets/img/keyboard.jpg")
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  .header
+    display: flex
+    width: 100%
+    flex: 2
+    h1
+      display: inline-block
+      margin: auto
+      font-size: 2em
+      font-weight: 400
+      letter-spacing: -0.05em
+      color: $h1-white-color
+  .container
+    display: flex
+    width: 100%
+    max-width: 910px
+    max-height: 550px
+    margin: auto
+    flex: 7
+    flex-direction: row
+    justify-content: center
+
+    .social
+      display: flex
+      margin: 0 15px
+      flex: 1
+      flex-direction: column
+      justify-content: center
+      align-items: center
+      align-content: center
+    .contact
+      display: flex
+      margin: 0 15px
+      flex-direction: column
+      flex: 1
+  .footer
+    display: flex
+    width: 100%
+    flex: 1
+
+  .social
+    .profile-picture
+      height: 320px
+      width: 240px
+      border: 3px solid white
+      box-shadow: 0 0 5px 0 rgba(0,0,0, 0.6)
+      .picture
+        height: 100%
+        width: 100%
+        background-image: url("/assets/img/profile_facebook.jpg")
+        background-position: center
+        background-repeat: no-repeat
+        background-size: cover
+    &-contact h2
+      margin: 20px 0 10px 0
+      font-size: 1.5em
+      font-weight: 400
+      color: $white-color
+    &-links
+      width: 100%
+      display: flex
+      justify-content: space-around
+      background-color: rgba(255,255,255,0.7)
+      padding: 7px 4px
+      box-shadow: 0 0 2px 0 rgba(0,0,0,0.5)
+      a
+        width: 30px
+        height: 30px
+        background-position: center
+        //border: 1px solid black
+      #fb
+        background-image: url("/assets/img/icons/fb_logo.png")
+        background-size: cover
+      #tw
+        background-image: url("/assets/img/icons/tw_logo.png")
+        background-size: cover
+        //background-color: white
+        background-color: white
+      #gh
+        background-image: url("/assets/img/icons/gh_logo.png")
+        background-size: cover
+        background-color: white
+        border-radius: 50%
+      #li
+        width: 40px
+        background-image: url("/assets/img/icons/li_logo.png")
+        background-size: cover
+
+
+  .contact
+    padding-right: 30px
+    h2
+      font-size: 1.6em
+      font-weight: 400
+      color: $white-color
+    &-message
+      flex: 1
+      display: flex
+      flex-direction: column
+      input[type="submit"]
+        font-size: 1.2em
+        width: 40%
+        align-self: flex-end
+        margin: 5px 0
+        background-color: $white-color
+        color: $black-color
+      textarea
+        height: 200px
+      input, textarea
+        padding: 0 5px
+        background-color: transparent
+        border: 1px solid $white-color
+        font-size: 1.1em
+        font-weight: 400
+        color: $white-color
+        outline: none
+        margin: 0 0 7px 0
+        &:focus
+          box-shadow: 0 0 3px 0 rgba(0,0,0,0.7)

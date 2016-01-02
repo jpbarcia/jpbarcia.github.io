@@ -77,7 +77,6 @@
         <!--/Section Acerca de-->
 
         <!--Section Habilidades-->
-
         <section id="habilidades">
             <div class="header">
                 <h1>Habilidades</h1>
@@ -332,8 +331,236 @@
             <div class="footer">
             </div>
         </section>
-
         <!--/Section Habilidades-->
+
+        <!--Section Profesional-->
+        <section id="profesional">
+            <div class="image-background">
+            </div>
+            <div class="code-background">
+                <div class="code-background-container">
+                <pre>
+        [HttpGet]
+        public ActionResult Pagar(int id)
+        {
+            Cuota c = db.Cuota.FirstOrDefault(x => x.Id == id && x.Pagado == false);
+            if (c == null)
+                return RedirectToAction("DeudasPendientes");
+            Usuario u = db.Usuario.FirstOrDefault(x => x.Id == c.UsuarioId);
+            DeudaBinding model = new DeudaBinding()
+            {
+                id = c.Id,
+                deuda = (double)c.Deuda,
+                dpto = u.Dpto,
+                fecha = c.Fecha,
+                propietarios = u.Propietarios
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Pagar(DeudaBinding model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            Cuota c = db.Cuota.FirstOrDefault(x => x.Id == model.id && x.Pagado == false);
+            if (c == null)
+                return RedirectToAction("DeudasPendientes");
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    c.Pagado = model.pagado;
+                    c.Pago = c.Pago.GetValueOrDefault() + (decimal)model.monto;
+                    c.FechaPago = model.fechaPago;
+                    if (model.pagado)
+                    {
+                        Usuario u = db.Usuario.FirstOrDefault(x => x.Id == c.UsuarioId);
+                        u.Monto = c.Pago - c.Deuda;
+                    }
+                    db.SaveChanges();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    //Response.StatusCode = 404;
+                }
+            }
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult Pagar(int id)
+        {
+            Cuota c = db.Cuota.FirstOrDefault(x => x.Id == id && x.Pagado == false);
+            if (c == null)
+                return RedirectToAction("DeudasPendientes");
+            Usuario u = db.Usuario.FirstOrDefault(x => x.Id == c.UsuarioId);
+            DeudaBinding model = new DeudaBinding()
+            {
+                id = c.Id,
+                deuda = (double)c.Deuda,
+                dpto = u.Dpto,
+                fecha = c.Fecha,
+                propietarios = u.Propietarios
+            };
+            return View(model);
+        }
+        [HttpPost]
+        public ActionResult Pagar(DeudaBinding model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+            Cuota c = db.Cuota.FirstOrDefault(x => x.Id == model.id && x.Pagado == false);
+            if (c == null)
+                return RedirectToAction("DeudasPendientes");
+            using (var transaction = db.Database.BeginTransaction())
+            {
+                try
+                {
+                    c.Pagado = model.pagado;
+                    c.Pago = c.Pago.GetValueOrDefault() + (decimal)model.monto;
+                    c.FechaPago = model.fechaPago;
+                    if (model.pagado)
+                    {
+                        Usuario u = db.Usuario.FirstOrDefault(x => x.Id == c.UsuarioId);
+                        u.Monto = c.Pago - c.Deuda;
+                    }
+                    db.SaveChanges();
+                    transaction.Commit();
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    //Response.StatusCode = 404;
+                }
+            }
+            return View(model);
+        }
+                </pre>
+                <div class="overlay">
+                </div>
+                </div>
+            </div>
+            <div class="header">
+                <h1>Profesional</h1>
+            </div>
+            <div class="container">
+                <div class="experiencia">
+                    <h2>Experiencia</h2>
+                    <ul>
+                        <li>-----</li>
+                    </ul>
+                </div>
+                <div class="preparacion">
+                    <h2>Preparación</h2>
+                    <ul>
+                        <li>
+                            Repositorios
+                            <ul>
+                                <li><a>Programación Competitiva</a></li>
+                                <li><a>Proyecto Portafolio</a></li>
+                                <li><a>------</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            Perfiles Programación Competitiva
+                            <ul>
+                                <li><a>UVa Online Judge</a></li>
+                                <li><a>Codeforces</a></li>
+                                <li><a>TopCoder</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proyectos">
+                    <h2>Proyectos</h2>
+                    <div class="proyectos-container">
+                        <div class="proyect">
+                            <a href="#">
+                                <div class="overlay">
+                                    <h3>Portafolio</h3>
+                                    <p>Portafolio personal / resume</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="proyect">
+                            <a>
+                                <div class="overlay">
+                                    <h3>Nombre</h3>
+                                    <p>Pequeña Descripcion</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="proyect">
+                            <a>
+                                <div class="overlay">
+                                    <h3>Nombre</h3>
+                                    <p>Pequeña Descripcion</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="proyect">
+                            <a>
+                                <div class="overlay">
+                                    <h3>Nombre</h3>
+                                    <p>Pequeña Descripcion</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+
+        </section>
+        <!--/Section Profesional-->
+
+        <!--Section Contacto-->
+        <section id="contacto">
+            <div class="header">
+                <h1>Contacto</h1>
+            </div>
+            <div class="container">
+                <div class="social">
+                    <div class="profile-picture">
+                        <div class="picture">
+                        </div>
+                    </div>
+                    <div class="social-contact">
+                        <h2>Redes Sociales</h2>
+                        <div class="social-links">
+                            <a href="#" id="fb"></a>
+                            <a href="#" id="tw"></a>
+                            <a href="#" id="gh"></a>
+                            <a href="#" id="li"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h2>Enviame un mensaje <a href=""></a></h2>
+                    <form class="contact-message">
+                        <label for="email">
+                            Email
+                        </label>
+                        <input type="text" name="email" autocomplete="off">
+                        <label for="message">
+                            Mensaje
+                        </label>
+                        <textarea name="message"></textarea>
+                        <input type="submit" name="Enviar">
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </section>
+        <!--/Section Contacto-->
+
     </div>
     <!--/Wrapper-->
 

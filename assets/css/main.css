@@ -468,12 +468,12 @@ nav a {
 nav a:visited {
   color: #5c5c5c;
 }
-nav a:hover, nav a:focus {
+nav a:hover {
   color: #292929;
   border-bottom: 1px solid #292929;
 }
 @media (max-width: 760px) {
-  nav a:hover, nav a:focus {
+  nav a:hover {
     border-bottom: 1px solid white;
   }
 }
@@ -530,12 +530,11 @@ nav a:hover, nav a:focus {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #c9c9c9;
+  background-color: #efefef;
   background-image: url("/assets/img/code.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: screen;
 }
 #acercade .header {
   display: flex;
@@ -570,7 +569,7 @@ nav a:hover, nav a:focus {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 0 0 3px 2px #dddddd;
+  box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.3);
 }
 #acercade .container .profile-description {
   display: flex;
@@ -592,7 +591,7 @@ nav a:hover, nav a:focus {
 }
 #acercade .container .profile-description p {
   text-align: justify;
-  color: #7f7f7f;
+  color: #4c4c4c;
   font-size: 1em;
   font-weight: 400;
 }
@@ -606,10 +605,10 @@ nav a:hover, nav a:focus {
   text-align: center;
   font-size: 1.3em;
   font-weight: 600;
-  border: 1px solid #c3c3c3;
+  border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 0.2em;
   background-color: white;
-  box-shadow: 0 0 2px 1px #dddddd;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
 }
 #acercade .container .profile-description a:visited {
   color: #444444;
@@ -618,7 +617,7 @@ nav a:hover, nav a:focus {
 #acercade .container .profile-description a:hover, #acercade .container .profile-description a:focus {
   color: #444444;
   text-decoration: none;
-  box-shadow: 0 0 2px 1px #b4b4b4;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
 }
 #acercade .footer {
   display: flex;
@@ -627,19 +626,17 @@ nav a:hover, nav a:focus {
 }
 
 #habilidades {
-  background-color: black;
   color: white;
   height: 100%;
   display: flex;
   min-height: 100%;
   flex-direction: column;
   justify-content: center;
-  background-image: url("/assets/img/workspace.jpg");
   background-color: rgba(135, 67, 67, 0.8);
+  background-image: url("/assets/img/workspace.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: darken;
 }
 #habilidades .header {
   display: flex;
@@ -2541,6 +2538,314 @@ nav a:hover, nav a:focus {
   height: 240px;
 }
 
+#profesional {
+  position: relative;
+  color: #444444;
+  height: 100%;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #f6f6f6;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -10;
+}
+#profesional .header {
+  display: flex;
+  width: 100%;
+  flex: 2;
+}
+#profesional .header h1 {
+  display: inline-block;
+  margin: auto;
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #444444;
+}
+#profesional .container {
+  display: flex;
+  width: 100%;
+  max-width: 910px;
+  max-height: 750px;
+  margin: auto;
+  flex: 8;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#profesional .footer {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+#profesional .container {
+  display: flex;
+}
+#profesional .container h2 {
+  display: block;
+  width: 100%;
+  font-size: 1.4em;
+  font-weight: 400;
+  color: #444444;
+  padding-bottom: 10px;
+}
+#profesional .container li {
+  list-style: none;
+}
+#profesional .container ul ul {
+  padding-left: 30px;
+}
+#profesional .experiencia {
+  display: flex;
+  flex-direction: column;
+  height: 46%;
+  margin: 2%;
+  width: 35%;
+}
+#profesional .preparacion {
+  display: flex;
+  flex-direction: column;
+  height: 46%;
+  margin: 2%;
+  width: 35%;
+}
+#profesional .proyectos {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 2%;
+  width: 40%;
+  height: 100%;
+}
+#profesional .proyectos h2 {
+  text-align: center;
+  margin: auto;
+}
+#profesional .proyectos-container {
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+#profesional .proyectos .proyect {
+  width: 46%;
+  margin: 2%;
+  position: relative;
+  background-color: black;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+#profesional .proyectos .proyect:nth-child(4n+1), #profesional .proyectos .proyect:nth-child(4n) {
+  height: 180px;
+  background-image: url("http://www.martiniglesias.eu/archivos/css-reset-reseteando-los-estilos-en-css.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+#profesional .proyectos .proyect:nth-child(4n+2), #profesional .proyectos .proyect:nth-child(4n+3) {
+  height: 150px;
+}
+#profesional .proyectos .proyect a {
+  color: #444444;
+}
+#profesional .proyectos .proyect .overlay {
+  position: absolute;
+  bottom: 0;
+  padding: 0 7px;
+  height: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#profesional .proyectos .proyect .overlay h3 {
+  font-size: 1.3em;
+  font-weight: 400;
+  color: #444444;
+}
+#profesional .proyectos .proyect .overlay p {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 400;
+}
+#profesional .proyectos .proyect:hover .overlay, #profesional .proyectos .proyect:focus .overlay {
+  height: 90px;
+}
+#profesional .code-background {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  overflow: hidden;
+  top: 0;
+  z-index: -5;
+}
+#profesional .code-background-container {
+  position: relative;
+  top: -6%;
+  left: 60%;
+  font-size: 0.9em;
+  line-height: 1.1em;
+  overflow: hidden;
+}
+#profesional .code-background .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #f6f6f6, rgba(246, 246, 246, 0.2));
+}
+
+#contacto {
+  color: white;
+  height: 100%;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgba(54, 161, 106, 0.9);
+  background-image: url("/assets/img/keyboard.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#contacto .header {
+  display: flex;
+  width: 100%;
+  flex: 2;
+}
+#contacto .header h1 {
+  display: inline-block;
+  margin: auto;
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  color: #eeeeee;
+}
+#contacto .container {
+  display: flex;
+  width: 100%;
+  max-width: 910px;
+  max-height: 550px;
+  margin: auto;
+  flex: 7;
+  flex-direction: row;
+  justify-content: center;
+}
+#contacto .container .social {
+  display: flex;
+  margin: 0 15px;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+#contacto .container .contact {
+  display: flex;
+  margin: 0 15px;
+  flex-direction: column;
+  flex: 1;
+}
+#contacto .footer {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+#contacto .social .profile-picture {
+  height: 320px;
+  width: 240px;
+  border: 3px solid white;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.6);
+}
+#contacto .social .profile-picture .picture {
+  height: 100%;
+  width: 100%;
+  background-image: url("/assets/img/profile_facebook.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contacto .social-contact h2 {
+  margin: 20px 0 10px 0;
+  font-size: 1.5em;
+  font-weight: 400;
+  color: #eeeeee;
+}
+#contacto .social-links {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 7px 4px;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+#contacto .social-links a {
+  width: 30px;
+  height: 30px;
+  background-position: center;
+}
+#contacto .social-links #fb {
+  background-image: url("/assets/img/icons/fb_logo.png");
+  background-size: cover;
+}
+#contacto .social-links #tw {
+  background-image: url("/assets/img/icons/tw_logo.png");
+  background-size: cover;
+  background-color: white;
+}
+#contacto .social-links #gh {
+  background-image: url("/assets/img/icons/gh_logo.png");
+  background-size: cover;
+  background-color: white;
+  border-radius: 50%;
+}
+#contacto .social-links #li {
+  width: 40px;
+  background-image: url("/assets/img/icons/li_logo.png");
+  background-size: cover;
+}
+#contacto .contact {
+  padding-right: 30px;
+}
+#contacto .contact h2 {
+  font-size: 1.6em;
+  font-weight: 400;
+  color: #eeeeee;
+}
+#contacto .contact-message {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#contacto .contact-message input[type="submit"] {
+  font-size: 1.2em;
+  width: 40%;
+  align-self: flex-end;
+  margin: 5px 0;
+  background-color: #eeeeee;
+  color: #444444;
+}
+#contacto .contact-message textarea {
+  height: 200px;
+}
+#contacto .contact-message input, #contacto .contact-message textarea {
+  padding: 0 5px;
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #eeeeee;
+  outline: none;
+  margin: 0 0 7px 0;
+}
+#contacto .contact-message input:focus, #contacto .contact-message textarea:focus {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
+}
+
 .wrapper {
   margin: 0 0 0 110px;
   height: 100%;
@@ -2550,6 +2855,18 @@ nav a:hover, nav a:focus {
   .wrapper {
     margin: 51px 0 0 0;
   }
+}
+
+#acercade {
+  display: flex;
+}
+
+#habilidades {
+  display: flex;
+}
+
+#profesional {
+  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

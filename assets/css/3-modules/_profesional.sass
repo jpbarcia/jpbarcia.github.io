@@ -1,0 +1,142 @@
+$profesional-bg-color: rgba(246, 246, 246, 1)
+$profesional-bg-color-op: rgba(246, 246, 246, 0.2)
+#profesional
+  position: relative
+  color: $black-color
+  height: 100%
+  display: flex
+  min-height: 100%
+  flex-direction: column
+  justify-content: center
+  background-color: $profesional-bg-color
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  z-index: -10
+  .header
+    display: flex
+    width: 100%
+    flex: 2
+    h1
+      display: inline-block
+      margin: auto
+      font-size: 2em
+      font-weight: 400
+      letter-spacing: -0.05em
+      color: $black-color
+  .container
+    display: flex
+    width: 100%
+    max-width: 910px
+    max-height: 750px
+    margin: auto
+    flex: 8
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+  .footer
+    display: flex
+    width: 100%
+    flex: 1
+  .container
+    display: flex
+    h2
+      display: block
+      width: 100%
+      font-size: 1.4em
+      font-weight: 400
+      color: $black-color
+      padding-bottom: 10px
+    li
+      list-style: none
+    ul ul
+      padding-left: 30px
+
+  .experiencia
+    display: flex
+    flex-direction: column
+    height: 46%
+    margin: 2%
+    width: 35%
+  .preparacion
+    display: flex
+    flex-direction: column
+    height: 46%
+    margin: 2%
+    width: 35%
+  .proyectos
+    display: flex
+    flex-direction: column
+    position: relative
+    margin: 2%
+    width: 40%
+    height: 100%
+    h2
+      text-align: center
+      margin: auto
+    &-container
+      //background-color: blue
+      height: 360px
+      display: flex
+      flex-direction: column
+      flex-wrap: wrap
+    .proyect
+      width: 46%
+      margin: 2%
+      position: relative
+      background-color: black
+      box-shadow: 0 0 5px 0 rgba(0,0,0,0.5)
+      &:nth-child(4n+1), &:nth-child(4n)
+        height: 180px
+        background-image: url("http://www.martiniglesias.eu/archivos/css-reset-reseteando-los-estilos-en-css.jpg")
+        background-position: center
+        background-size: cover
+        background-repeat: no-repeat
+      &:nth-child(4n+2), &:nth-child(4n+3)
+        height: 150px
+      a
+        color: $black-color
+      .overlay
+        position: absolute
+        bottom: 0
+        padding: 0 7px
+        height: 0
+        left: 0
+        right: 0
+        overflow: hidden
+        background-color: rgba(255,255,255,0.7)
+        h3
+          font-size: 1.3em
+          font-weight: 400
+          color: $black-color
+        p
+          margin: 0
+          font-size: 1em
+          font-weight: 400
+      &:hover .overlay, &:focus .overlay
+        height: 90px
+  .image-background
+
+  .code-background
+    position: absolute
+    height: 100%
+    right: 0
+    //width: 20%
+    overflow: hidden
+    top: 0
+    z-index: -5
+    &-container
+      position: relative
+      top: -6%
+      left: 60%
+      font-size: 0.9em
+      line-height: 1.1em
+      overflow: hidden
+    .overlay
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(to right, $profesional-bg-color, $profesional-bg-color-op)
