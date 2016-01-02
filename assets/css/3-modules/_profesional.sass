@@ -31,8 +31,6 @@ $profesional-bg-color-op: rgba(246, 246, 246, 0.2)
     max-height: 750px
     margin: auto
     flex: 8
-    flex-direction: column
-    flex-wrap: wrap
     justify-content: center
     align-items: center
   .footer
@@ -52,26 +50,28 @@ $profesional-bg-color-op: rgba(246, 246, 246, 0.2)
       list-style: none
     ul ul
       padding-left: 30px
-
+  .experiencia-preparacion
+    display: flex
+    flex-direction: column
   .experiencia
     display: flex
     flex-direction: column
-    height: 46%
+    min-height: 20%
     margin: 2%
-    width: 35%
+    width: 100%
   .preparacion
     display: flex
     flex-direction: column
-    height: 46%
+    min-height: 20%
     margin: 2%
-    width: 35%
+    width: 100%
   .proyectos
     display: flex
     flex-direction: column
     position: relative
     margin: 2%
     width: 40%
-    height: 100%
+    min-height: 20%
     h2
       text-align: center
       margin: auto

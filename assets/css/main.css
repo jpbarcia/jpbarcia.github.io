@@ -2572,8 +2572,6 @@ nav a:hover {
   max-height: 750px;
   margin: auto;
   flex: 8;
-  flex-direction: column;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
@@ -2599,19 +2597,23 @@ nav a:hover {
 #profesional .container ul ul {
   padding-left: 30px;
 }
+#profesional .experiencia-preparacion {
+  display: flex;
+  flex-direction: column;
+}
 #profesional .experiencia {
   display: flex;
   flex-direction: column;
-  height: 46%;
+  min-height: 20%;
   margin: 2%;
-  width: 35%;
+  width: 100%;
 }
 #profesional .preparacion {
   display: flex;
   flex-direction: column;
-  height: 46%;
+  min-height: 20%;
   margin: 2%;
-  width: 35%;
+  width: 100%;
 }
 #profesional .proyectos {
   display: flex;
@@ -2619,7 +2621,7 @@ nav a:hover {
   position: relative;
   margin: 2%;
   width: 40%;
-  height: 100%;
+  min-height: 20%;
 }
 #profesional .proyectos h2 {
   text-align: center;
