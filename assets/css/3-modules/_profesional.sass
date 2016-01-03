@@ -1,42 +1,53 @@
 $profesional-bg-color: rgba(246, 246, 246, 1)
-$profesional-bg-color-op: rgba(246, 246, 246, 0.2)
+$profesional-bg-color-op: rgba(250, 250, 250, 0.1)
+
+//TO DO: Z-INDEX Y HOVERS
 #profesional
   position: relative
   color: $black-color
   height: 100%
   display: flex
-  min-height: 100%
+  //min-height: 100%
   flex-direction: column
   justify-content: center
   background-color: $profesional-bg-color
   background-size: cover
   background-repeat: no-repeat
   background-position: center
-  z-index: -10
+  //z-index: -10
   .header
     display: flex
     width: 100%
-    flex: 2
+    flex: 2 2 auto
+    //background-color: blue
+    position: relative
     h1
       display: inline-block
       margin: auto
       font-size: 2em
       font-weight: 400
       letter-spacing: -0.05em
+      //sbackground-color: red
       color: $black-color
   .container
     display: flex
     width: 100%
+    position: relative
+    //z-index: 1
     max-width: 910px
     max-height: 750px
     margin: auto
-    flex: 8
+    flex: 8 8 auto
     justify-content: center
     align-items: center
+    @media (max-width: 760px)
+      flex-direction: column
+      align-content: stretch
+      max-height: none
   .footer
     display: flex
     width: 100%
-    flex: 1
+    flex: 1 1 auto
   .container
     display: flex
     h2
@@ -72,6 +83,8 @@ $profesional-bg-color-op: rgba(246, 246, 246, 0.2)
     margin: 2%
     width: 40%
     min-height: 20%
+    @media (max-width: 760px)
+      width: 90%
     h2
       text-align: center
       margin: auto
@@ -81,6 +94,8 @@ $profesional-bg-color-op: rgba(246, 246, 246, 0.2)
       display: flex
       flex-direction: column
       flex-wrap: wrap
+      @media (max-width: 760px)
+        height: 400px
     .proyect
       width: 46%
       margin: 2%
@@ -125,7 +140,7 @@ $profesional-bg-color-op: rgba(246, 246, 246, 0.2)
     //width: 20%
     overflow: hidden
     top: 0
-    z-index: -5
+    //z-index: -5
     &-container
       position: relative
       top: -6%

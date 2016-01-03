@@ -260,6 +260,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
+@media (max-width: 790px) {
+  body {
+    height: auto;
+  }
+}
 
 h1, h2, h3, h4, h5, img, a, span, nav, section, ul, li, table, tr, td, th, hr, header, div, footer {
   margin: 0;
@@ -297,10 +302,9 @@ header {
   left: 0;
   background-color: white;
   box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.5);
-  min-height: 384px;
   z-index: 10;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   header {
     right: 0;
     bottom: auto;
@@ -310,6 +314,7 @@ header {
     display: block;
     min-height: auto;
     transition: all 0.75s ease;
+    min-width: 300px;
   }
 }
 
@@ -320,7 +325,7 @@ header {
   justify-content: flex-end;
   flex: 1;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .header-name {
     position: relative;
     height: 100%;
@@ -340,7 +345,7 @@ header {
   line-height: 1em;
   letter-spacing: -0.1em;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .header-name .container {
     display: none;
   }
@@ -350,7 +355,7 @@ header {
   background-color: #bbbbbb;
   width: 100%;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .header-name hr {
     display: none;
   }
@@ -358,7 +363,7 @@ header {
 .header-name .small-nav-header {
   display: none;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .header-name .small-nav-header {
     display: inline-block;
     width: 100%;
@@ -379,7 +384,7 @@ header {
   display: none;
   transition: all;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .header-name .small-nav-toggle {
     display: flex;
     cursor: pointer;
@@ -419,7 +424,7 @@ header {
 nav {
   flex: 2;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   nav {
     flex: none;
     height: 0px;
@@ -433,7 +438,7 @@ nav ul {
   width: 100%;
   padding: 15px 0;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   nav ul {
     text-align: center;
     transform: translateY(-100%);
@@ -445,7 +450,7 @@ nav li {
   list-style-type: none;
   padding: 5px 0;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   nav li {
     border-bottom: 1px solid #dddddd;
   }
@@ -460,7 +465,7 @@ nav a {
   text-decoration: none;
   border-bottom: 1px solid white;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   nav a {
     font-size: 1.2em;
   }
@@ -472,18 +477,37 @@ nav a:hover {
   color: #292929;
   border-bottom: 1px solid #292929;
 }
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   nav a:hover {
     border-bottom: 1px solid white;
   }
 }
 
 #overlay {
-  visibility: hidden;
-  height: 0;
+  display: none;
+}
+@media (max-width: 790px) {
+  #overlay {
+    display: block;
+    background-color: transparent;
+    height: 0;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    transition: all 0.3s ease;
+    z-index: 1;
+  }
+}
+@media (max-width: 790px) {
+  #overlay[class="cover-all"] {
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 790px) {
   .is-open {
     border-bottom: 1px solid #dddddd;
   }
@@ -510,24 +534,10 @@ nav a:hover {
     background-color: white;
     transform: translateY(0);
   }
-  .is-open #overlay {
-    visibility: visible;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    width: 100%;
-    height: 100vh;
-    align-self: stretch;
-    text-align: center;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.44);
-  }
 }
 
 #acercade {
   height: 100%;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #efefef;
@@ -539,7 +549,7 @@ nav a:hover {
 #acercade .header {
   display: flex;
   width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
 }
 #acercade .header h1 {
   display: inline-block;
@@ -552,7 +562,13 @@ nav a:hover {
 #acercade .container {
   display: flex;
   width: 100%;
-  flex: 3;
+  flex: 3 3 auto;
+}
+@media (max-width: 790px) {
+  #acercade .container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 #acercade .container .profile-picture {
   flex: 2;
@@ -581,13 +597,24 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   margin: auto;
-  max-width: 550px;
+  padding-right: 50px;
+  max-width: 600px;
+}
+@media (max-width: 790px) {
+  #acercade .container .profile-description .description {
+    padding-right: 0;
+  }
 }
 #acercade .container .profile-description h2 {
   font-size: 1.5em;
   font-weight: 400;
   letter-spacing: -0.08em;
   color: #444444;
+}
+@media (max-width: 790px) {
+  #acercade .container .profile-description h2 {
+    text-align: center;
+  }
 }
 #acercade .container .profile-description p {
   text-align: justify;
@@ -605,10 +632,9 @@ nav a:hover {
   text-align: center;
   font-size: 1.3em;
   font-weight: 600;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 0.2em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: white;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 #acercade .container .profile-description a:visited {
   color: #444444;
@@ -617,19 +643,18 @@ nav a:hover {
 #acercade .container .profile-description a:hover, #acercade .container .profile-description a:focus {
   color: #444444;
   text-decoration: none;
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 #acercade .footer {
   display: flex;
   width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 #habilidades {
   color: white;
   height: 100%;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(135, 67, 67, 0.8);
@@ -641,7 +666,7 @@ nav a:hover {
 #habilidades .header {
   display: flex;
   width: 100%;
-  flex: 2;
+  flex: 2 2 auto;
 }
 #habilidades .header h1 {
   display: inline-block;
@@ -657,9 +682,17 @@ nav a:hover {
   max-width: 910px;
   max-height: 550px;
   margin: auto;
-  flex: 7;
+  flex: 7 7 auto;
   flex-direction: row;
   justify-content: center;
+}
+@media (max-width: 760px) {
+  #habilidades .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-height: none;
+  }
 }
 #habilidades .container .skills {
   display: flex;
@@ -674,10 +707,16 @@ nav a:hover {
   flex-direction: column;
   flex: 1;
 }
+@media (max-width: 760px) {
+  #habilidades .container .knowledge {
+    width: 80%;
+    padding: 40px 0;
+  }
+}
 #habilidades .footer {
   display: flex;
   width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
 }
 
 .skill-container {
@@ -2543,19 +2582,18 @@ nav a:hover {
   color: #444444;
   height: 100%;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   justify-content: center;
   background-color: #f6f6f6;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  z-index: -10;
 }
 #profesional .header {
   display: flex;
   width: 100%;
-  flex: 2;
+  flex: 2 2 auto;
+  position: relative;
 }
 #profesional .header h1 {
   display: inline-block;
@@ -2568,17 +2606,25 @@ nav a:hover {
 #profesional .container {
   display: flex;
   width: 100%;
+  position: relative;
   max-width: 910px;
   max-height: 750px;
   margin: auto;
-  flex: 8;
+  flex: 8 8 auto;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 760px) {
+  #profesional .container {
+    flex-direction: column;
+    align-content: stretch;
+    max-height: none;
+  }
 }
 #profesional .footer {
   display: flex;
   width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
 }
 #profesional .container {
   display: flex;
@@ -2623,6 +2669,11 @@ nav a:hover {
   width: 40%;
   min-height: 20%;
 }
+@media (max-width: 760px) {
+  #profesional .proyectos {
+    width: 90%;
+  }
+}
 #profesional .proyectos h2 {
   text-align: center;
   margin: auto;
@@ -2632,6 +2683,11 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+@media (max-width: 760px) {
+  #profesional .proyectos-container {
+    height: 400px;
+  }
 }
 #profesional .proyectos .proyect {
   width: 46%;
@@ -2682,7 +2738,6 @@ nav a:hover {
   right: 0;
   overflow: hidden;
   top: 0;
-  z-index: -5;
 }
 #profesional .code-background-container {
   position: relative;
@@ -2698,14 +2753,13 @@ nav a:hover {
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, #f6f6f6, rgba(246, 246, 246, 0.2));
+  background: linear-gradient(to right, #f6f6f6, rgba(250, 250, 250, 0.1));
 }
 
 #contacto {
   color: white;
   height: 100%;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   justify-content: center;
   background-color: rgba(54, 161, 106, 0.9);
@@ -2717,7 +2771,7 @@ nav a:hover {
 #contacto .header {
   display: flex;
   width: 100%;
-  flex: 2;
+  flex: 2 2 auto;
 }
 #contacto .header h1 {
   display: inline-block;
@@ -2733,9 +2787,15 @@ nav a:hover {
   max-width: 910px;
   max-height: 550px;
   margin: auto;
-  flex: 7;
+  flex: 7 7 auto;
   flex-direction: row;
   justify-content: center;
+}
+@media (max-width: 790px) {
+  #contacto .container {
+    max-height: none;
+    flex-direction: column;
+  }
 }
 #contacto .container .social {
   display: flex;
@@ -2752,10 +2812,15 @@ nav a:hover {
   flex-direction: column;
   flex: 1;
 }
+@media (max-width: 790px) {
+  #contacto .container .contact {
+    padding: 30px 0;
+  }
+}
 #contacto .footer {
   display: flex;
   width: 100%;
-  flex: 1;
+  flex: 1 1 auto;
 }
 #contacto .social .profile-picture {
   height: 320px;
@@ -2824,15 +2889,22 @@ nav a:hover {
   flex-direction: column;
 }
 #contacto .contact-message input[type="submit"] {
+  padding: 5px 0;
   font-size: 1.2em;
   width: 40%;
   align-self: flex-end;
   margin: 5px 0;
   background-color: #eeeeee;
   color: #444444;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.15);
+}
+#contacto .contact-message input[type="submit"]:focus, #contacto .contact-message input[type="submit"]:hover {
+  background-color: #e9e9e9;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 #contacto .contact-message textarea {
   height: 200px;
+  resize: none;
 }
 #contacto .contact-message input, #contacto .contact-message textarea {
   padding: 0 5px;
@@ -2843,6 +2915,7 @@ nav a:hover {
   color: #eeeeee;
   outline: none;
   margin: 0 0 7px 0;
+  border-radius: 0;
 }
 #contacto .contact-message input:focus, #contacto .contact-message textarea:focus {
   box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
@@ -2852,10 +2925,58 @@ nav a:hover {
   margin: 0 0 0 110px;
   height: 100%;
   min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
-@media (max-width: 760px) {
+.wrapper section {
+  flex: 1;
+  min-height: 100%;
+}
+@media (max-height: 540px) {
+  .wrapper section {
+    min-height: 540px;
+  }
+}
+@media (max-width: 790px) {
   .wrapper {
     margin: 51px 0 0 0;
+    width: auto;
+    flex-direction: column;
+  }
+  .wrapper section {
+    min-width: 300px;
+  }
+  .wrapper section .header, .wrapper section .footer {
+    padding: 15px 0;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  letter-spacing: -0.02em;
+  line-height: 0.9em;
+  min-height: 20px;
+}
+footer p {
+  font-size: 0.9em;
+  text-align: center;
+}
+@media (max-width: 790px) {
+  footer {
+    width: 100%;
+    text-align: center;
+    min-width: 300px;
+    letter-spacing: 0.1em;
+    min-height: none;
+  }
+  footer p {
+    font-size: 0.8em;
+    display: block;
+    text-align: center;
+    margin: 5px auto;
   }
 }
 

@@ -1,6 +1,6 @@
 #acercade
   height: 100%
-  min-height: 100%
+  //min-height: 100%
   display: flex
   flex-direction: column
   background-color: $background-color
@@ -12,7 +12,7 @@
   .header
     display: flex
     width: 100%
-    flex: 1
+    flex: 1 1 auto
     h1
       display: inline-block
       margin: auto
@@ -23,7 +23,12 @@
   .container
     display: flex
     width: 100%
-    flex: 3
+    flex: 3 3 auto
+    @media (max-width: $ss)
+      flex-direction: column
+      //justify-content: center
+      //align-content: center
+      align-items: center
     .profile
       &-picture
         flex: 2
@@ -49,12 +54,17 @@
           display: flex
           flex-direction: column
           margin: auto
-          max-width: 550px
+          padding-right: 50px
+          max-width: 600px
+          @media (max-width: $ss)
+            padding-right: 0
         h2
           font-size: 1.5em
           font-weight: 400
           letter-spacing: -0.08em
           color: $black-color
+          @media (max-width: $ss)
+            text-align: center
         p
           text-align: justify
           color: lighten($p-color, 5%)
@@ -71,18 +81,18 @@
           text-align: center
           font-size: 1.3em
           font-weight: 600
-          border: 1px solid rgba(0,0,0,0.3)
-          border-radius: 0.2em
+          border: 1px solid rgba(0,0,0,0.2)
+          //border-radius: 0.2em
           background-color: white
-          box-shadow: 0 0 3px 0 rgba(0,0,0,0.3)
+          box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.1)
           &:visited
             color: $black-color
             text-decoration: none
           &:hover, &:focus
             color: $black-color
             text-decoration: none
-            box-shadow: 0 0 3px 0 rgba(0,0,0,0.5)
+            box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.3)
   .footer
     display: flex
     width: 100%
-    flex: 1
+    flex: 1 1 auto
