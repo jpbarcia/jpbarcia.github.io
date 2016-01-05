@@ -2165,10 +2165,15 @@ nav a:hover {
   box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.25);
   background-color: #e5e5e5;
 }
-.knowledge-bars .bar span {
+.knowledge-bars .bar .data {
   position: absolute;
   bottom: 0;
+  left: 0;
+  width: 100%;
   margin-bottom: -30px;
+  text-align: center;
+}
+.knowledge-bars .bar span {
   color: white;
   font-size: 1em;
 }
@@ -2640,6 +2645,16 @@ nav a:hover {
 #profesional .container li {
   list-style: none;
 }
+#profesional .container a {
+  text-decoration: none;
+  color: #517f92;
+}
+#profesional .container a:visited {
+  color: #517f92;
+}
+#profesional .container a:hover {
+  color: #6a99ac;
+}
 #profesional .container ul ul {
   padding-left: 30px;
 }
@@ -2693,12 +2708,14 @@ nav a:hover {
   width: 46%;
   margin: 2%;
   position: relative;
-  background-color: black;
+  background-color: #444444;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+}
+#profesional .proyectos .proyect:nth-child(1) {
+  background-image: url("/assets/img/projects/portfolio.jpg");
 }
 #profesional .proyectos .proyect:nth-child(4n+1), #profesional .proyectos .proyect:nth-child(4n) {
   height: 180px;
-  background-image: url("http://www.martiniglesias.eu/archivos/css-reset-reseteando-los-estilos-en-css.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2720,13 +2737,13 @@ nav a:hover {
   background-color: rgba(255, 255, 255, 0.7);
 }
 #profesional .proyectos .proyect .overlay h3 {
-  font-size: 1.3em;
+  font-size: 1.2em;
   font-weight: 400;
   color: #444444;
 }
 #profesional .proyectos .proyect .overlay p {
   margin: 0;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: 400;
 }
 #profesional .proyectos .proyect:hover .overlay, #profesional .proyectos .proyect:focus .overlay {
@@ -2811,6 +2828,7 @@ nav a:hover {
   margin: 0 15px;
   flex-direction: column;
   flex: 1;
+  justify-content: center;
 }
 @media (max-width: 790px) {
   #contacto .container .contact {
@@ -2884,9 +2902,22 @@ nav a:hover {
   color: #eeeeee;
 }
 #contacto .contact-message {
-  flex: 1;
   display: flex;
   flex-direction: column;
+}
+#contacto .contact-message input, #contacto .contact-message textarea {
+  padding: 0 5px;
+  background-color: transparent;
+  border: 1px solid #eeeeee;
+  font-size: 1.1em;
+  font-weight: 400;
+  color: #eeeeee;
+  outline: none;
+  margin: 0 0 7px 0;
+  border-radius: 0;
+}
+#contacto .contact-message input:focus, #contacto .contact-message textarea:focus {
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
 }
 #contacto .contact-message input[type="submit"] {
   padding: 5px 0;
@@ -2905,20 +2936,6 @@ nav a:hover {
 #contacto .contact-message textarea {
   height: 200px;
   resize: none;
-}
-#contacto .contact-message input, #contacto .contact-message textarea {
-  padding: 0 5px;
-  background-color: transparent;
-  border: 1px solid #eeeeee;
-  font-size: 1.1em;
-  font-weight: 400;
-  color: #eeeeee;
-  outline: none;
-  margin: 0 0 7px 0;
-  border-radius: 0;
-}
-#contacto .contact-message input:focus, #contacto .contact-message textarea:focus {
-  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
 }
 
 .wrapper {

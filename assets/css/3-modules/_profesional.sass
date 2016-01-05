@@ -59,6 +59,13 @@ $profesional-bg-color-op: rgba(250, 250, 250, 0.1)
       padding-bottom: 10px
     li
       list-style: none
+    a
+      text-decoration: none
+      color: $link-color
+      &:visited
+        color: $link-color
+      &:hover
+        color: lighten($link-color, 10%)
     ul ul
       padding-left: 30px
   .experiencia-preparacion
@@ -100,11 +107,13 @@ $profesional-bg-color-op: rgba(250, 250, 250, 0.1)
       width: 46%
       margin: 2%
       position: relative
-      background-color: black
+      background-color: darken($gray, 40%)
       box-shadow: 0 0 5px 0 rgba(0,0,0,0.5)
+      &:nth-child(1)
+        background-image: url("/assets/img/projects/portfolio.jpg")
       &:nth-child(4n+1), &:nth-child(4n)
         height: 180px
-        background-image: url("http://www.martiniglesias.eu/archivos/css-reset-reseteando-los-estilos-en-css.jpg")
+        //background-image: url("http://www.martiniglesias.eu/archivos/css-reset-reseteando-los-estilos-en-css.jpg")
         background-position: center
         background-size: cover
         background-repeat: no-repeat
@@ -122,12 +131,12 @@ $profesional-bg-color-op: rgba(250, 250, 250, 0.1)
         overflow: hidden
         background-color: rgba(255,255,255,0.7)
         h3
-          font-size: 1.3em
+          font-size: 1.2em
           font-weight: 400
           color: $black-color
         p
           margin: 0
-          font-size: 1em
+          font-size: 0.9em
           font-weight: 400
       &:hover .overlay, &:focus .overlay
         height: 90px
