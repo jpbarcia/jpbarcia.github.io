@@ -80,7 +80,7 @@ html(lang="es")
             p Si quieres ponerte en contacto conmigo, hazlo 
               a(href="#contact") aquí
               | , o si quieres ver mi resumé hazlo 
-              a(href="/jpbarcia.docx") aquí
+              a(href="/jpbarcia.pdf") aquí
               | .
           .clearfix
             
@@ -90,15 +90,13 @@ html(lang="es")
         .title
           h2 Mis Proyectos
         .container
-          a.project(href="#")
-            .project-title Blog
-            .project-image(style="background-image: url('assets/img/default.png')")
-          a.project(href="#")
-            .project-title Blog
-            .project-image(style="background-image: url('assets/img/default.png')")
-          a.project(href="#")
-            .project-title Blog
-            .project-image(style="background-image: url('assets/img/default.png')")
+          a.project(href="https://github.com/jpbarcia/jpbarcia.github.io" target="_blank")
+            .project-title Portafolio Personal
+            .project-image(style="background-image: url('assets/img/portfolio.png')")
+          //a.project(href="#")
+              .project-title Blog
+              .project-image(style="background-image: url('assets/img/default.png')")
+          
           .clearfix
       
       section.experience#experience
@@ -137,24 +135,24 @@ html(lang="es")
         .container
           .right-icon ++
           .social
-            a(href="#")
+            a(href="https://www.facebook.com/jean.barcia")
               i.fa.fa-facebook-square
-            a(href="#")
+            a(href="https://twitter.com/jean_barcia")
               i.fa.fa-twitter
-            a(href="#")
+            a(href="https://github.com/jpbarcia")
               i.fa.fa-github
-            a(href="#")
+            a(href="https://pe.linkedin.com/in/jean-barcia")
               i.fa.fa-linkedin-square
           .subtitle
             h3 ¡Enviame un mensaje!
           .form
-            form
+            form(action="http://formspree.io/jeanpierre_barcia@hotmail.com" method="POST")
               .name
-                input(type="text" placeholder="Nombre")
+                input(type="text" placeholder="Nombre" name="name")
               .email
-                input(type="email" placeholder="Email")
+                input(type="email" placeholder="Email" name="_replyto")
               .message
-                textarea(placeholder="Escribe tu mensaje aquí...")
+                textarea(placeholder="Escribe tu mensaje aquí..." name="message")
               .clearfix
               .send
                 button(type="submit") Enviar
