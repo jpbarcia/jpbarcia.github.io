@@ -1,0 +1,161 @@
+doctype html
+html(lang="es")
+  head
+    // #### META tags #### 
+    // Meta tags browser 
+    meta(charset="utf-8")
+    meta(http.equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    // Meta tags Description 
+    meta(name="description" content="Portafolio personal de Jean Pierre Barcia Ruidias")
+    meta(name="author" content="jpbarcia")
+    meta(name="keywords" content="jpbarcia, jean pierre barcia, barcia, portfolio, portafolio, personal, proyectos, github, jeanpbarcia")
+    // Meta tags Open Graph 
+    // -URL BASE 
+    meta(property="og:url" content="jpbarcia.github.io")
+    // -TITULO DE LA APLICACION 
+    meta(property="og:site_name" content="Portafolio - JPBarcia")
+    // -TITULO DE LA PAGINA 
+    meta(property="og:title" content="Portafolio JPBarcia")
+    // -DESCRIPCION 
+    meta(property="og:description" content="Portafolio personal de JPBarcia")
+    // -UBICACIÓN 
+    meta(property="og:locale" content="es_PE")
+    // -IMAGEN REPRESENTATIVA 
+    meta(property="og:image" content="")
+
+    // #### TITLE #### 
+    title Jean Pierre Barcia
+
+    // #### FONTS #### 
+    // Open Sans Condensed - Titles 
+    //link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet")
+    // Raleway - Body 
+    link(href="https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,800,800i" rel="stylesheet")
+    // Open Sans - Body
+    //link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet")
+
+    // #### ICON ####
+    link(rel="icon" href="assets/img/favicon.ico")
+    link(rel="stylesheet" href="assets/css/normalize.css")
+    link(rel="stylesheet" href="assets/css/font-awesome.min.css")
+    link(rel="stylesheet" href="assets/css/main.css")
+  
+    
+  body
+    .toggle-button
+      span.hamburguer
+    .sidebar-wrapper
+      .sidebar-title
+        h1 Jean Pierre
+          br 
+          | Barcia
+      nav.sidebar-menu
+        ul
+          li
+            a(href="#home") Acerca de
+          li
+            a(href="#projects") Proyectos
+          li
+            a(href="#experience") Experiencia
+          li
+            a(href="#honors") Méritos
+          li
+            a(href="#contact") Contacto
+    
+    .wrapper
+      section.home#home
+        .background
+          h1 Jean Pierre Barcia
+        .container
+          .left-side
+            h2
+              span Soy 
+              | Jean Pierre Barcia
+            h3 UX/UI Designer
+            h3 Front End Developer
+          .right-side
+            p Soy un estudiante de la carrera de Ingeniería de Software, estoy en el 8˚ ciclo en el décimo superior.
+            p Me especializo en UX/UI Design y Front-End Development, además me encuentro en el equipo de Programación Competitiva de mi universidad.
+            p Si quieres ponerte en contacto conmigo, hazlo 
+              a(href="#contact") aquí
+              | , o si quieres ver mi resumé hazlo 
+              a(href="/jpbarcia.pdf") aquí
+              | .
+          .clearfix
+            
+      section.projects#projects
+        .background
+          h1 Proyectos
+        .title
+          h2 Mis Proyectos
+        .container
+          a.project(href="https://github.com/jpbarcia/jpbarcia.github.io" target="_blank")
+            .project-title Portafolio Personal
+            .project-image(style="background-image: url('assets/img/portfolio.png')")
+          //a.project(href="#")
+              .project-title Blog
+              .project-image(style="background-image: url('assets/img/default.png')")
+          
+          .clearfix
+      
+      section.experience#experience
+        .background
+          h1 Experiencia
+        .title
+          h2 Experiencia
+        .container
+          .right-icon {}
+          .jobs
+            ul
+              li Freelancer 
+                span.date 11/2015 - hoy
+              li GMD - FrontEnd Developer 
+                span.date 07/2016 - hoy
+              li Programación Competitiva 
+                span.date 05/2015 - hoy
+          
+      section.honors#honors
+        .background
+          h1 Méritos
+        .title
+          h2 Méritos
+        .container
+          .right-icon ;
+          .merits
+            ul
+              li 10˚ puesto ICPC 2015 - Perú Programación Competitiva (Equipo No Code No Life)
+              li 1˚ puesto CONEISC 2016 Programación Competitiva (Equipo INSANECodeOverride)
+          
+      section.contact#contact
+        .background
+          h1 Contacto
+        .title
+          h2 Contacto
+        .container
+          .right-icon ++
+          .social
+            a(href="https://www.facebook.com/jean.barcia")
+              i.fa.fa-facebook-square
+            a(href="https://twitter.com/jean_barcia")
+              i.fa.fa-twitter
+            a(href="https://github.com/jpbarcia")
+              i.fa.fa-github
+            a(href="https://pe.linkedin.com/in/jean-barcia")
+              i.fa.fa-linkedin-square
+          .subtitle
+            h3 ¡Enviame un mensaje!
+          .form
+            form(action="http://formspree.io/jeanpierre_barcia@hotmail.com" method="POST")
+              .name
+                input(type="text" placeholder="Nombre" name="name")
+              .email
+                input(type="email" placeholder="Email" name="_replyto")
+              .message
+                textarea(placeholder="Escribe tu mensaje aquí..." name="message")
+              .clearfix
+              .send
+                button(type="submit") Enviar
+    
+    script(src="assets/js/jquery-3.1.0.min.js")
+    script(src="assets/js/main.js")
