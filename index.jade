@@ -25,7 +25,7 @@ html(lang="es")
     meta(property="og:image" content="")
 
     // #### TITLE #### 
-    title Portafolio - JPBarcia
+    title Jean Pierre Barcia
 
     // #### FONTS #### 
     // Open Sans Condensed - Titles 
@@ -37,9 +37,127 @@ html(lang="es")
 
     // #### ICON ####
     link(rel="icon" href="assets/img/favicon.ico")
+    link(rel="stylesheet" href="assets/css/normalize.css")
+    link(rel="stylesheet" href="assets/css/font-awesome.min.css")
     link(rel="stylesheet" href="assets/css/main.css")
+  
     
   body
-    h1 Ejemplo
-  
+    .toggle-button
+      span.hamburguer
+    .sidebar-wrapper
+      .sidebar-title
+        h1 Jean Pierre
+          br 
+          | Barcia
+      nav.sidebar-menu
+        ul
+          li
+            a(href="#home") Acerca de
+          li
+            a(href="#projects") Proyectos
+          li
+            a(href="#experience") Experiencia
+          li
+            a(href="#honors") Méritos
+          li
+            a(href="#contact") Contacto
+    
+    .wrapper
+      section.home#home
+        .background
+          h1 Jean Pierre Barcia
+        .container
+          .left-side
+            h2
+              span Soy 
+              | Jean Pierre Barcia
+            h3 UX/UI Designer
+            h3 Front End Developer
+          .right-side
+            p Soy un estudiante de la carrera de Ingeniería de Software, estoy en el 8˚ ciclo en el décimo superior.
+            p Me especializo en UX/UI Design y Front-End Development, además me encuentro en el equipo de Programación Competitiva de mi universidad.
+            p Si quieres ponerte en contacto conmigo, hazlo 
+              a(href="#contact") aquí
+              | , o si quieres ver mi resumé hazlo 
+              a(href="/jpbarcia.docx") aquí
+              | .
+          .clearfix
+            
+      section.projects#projects
+        .background
+          h1 Proyectos
+        .title
+          h2 Mis Proyectos
+        .container
+          a.project(href="#")
+            .project-title Blog
+            .project-image(style="background-image: url('assets/img/default.png')")
+          a.project(href="#")
+            .project-title Blog
+            .project-image(style="background-image: url('assets/img/default.png')")
+          a.project(href="#")
+            .project-title Blog
+            .project-image(style="background-image: url('assets/img/default.png')")
+          .clearfix
+      
+      section.experience#experience
+        .background
+          h1 Experiencia
+        .title
+          h2 Experiencia
+        .container
+          .right-icon {}
+          .jobs
+            ul
+              li Freelancer 
+                span.date 11/2015 - hoy
+              li GMD - FrontEnd Developer 
+                span.date 07/2016 - hoy
+              li Programación Competitiva 
+                span.date 05/2015 - hoy
+          
+      section.honors#honors
+        .background
+          h1 Méritos
+        .title
+          h2 Méritos
+        .container
+          .right-icon ;
+          .merits
+            ul
+              li 10˚ puesto ICPC 2015 - Perú Programación Competitiva (Equipo No Code No Life)
+              li 1˚ puesto CONEISC 2016 Programación Competitiva (Equipo INSANECodeOverride)
+          
+      section.contact#contact
+        .background
+          h1 Contacto
+        .title
+          h2 Contacto
+        .container
+          .right-icon ++
+          .social
+            a(href="#")
+              i.fa.fa-facebook-square
+            a(href="#")
+              i.fa.fa-twitter
+            a(href="#")
+              i.fa.fa-github
+            a(href="#")
+              i.fa.fa-linkedin-square
+          .subtitle
+            h3 ¡Enviame un mensaje!
+          .form
+            form
+              .name
+                input(type="text" placeholder="Nombre")
+              .email
+                input(type="email" placeholder="Email")
+              .message
+                textarea(placeholder="Escribe tu mensaje aquí...")
+              .clearfix
+              .send
+                button(type="submit") Enviar
+    
+    script(src="assets/js/jquery-3.1.0.min.js")
     script(src="assets/js/main.js")

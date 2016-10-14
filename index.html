@@ -24,7 +24,7 @@
     <!-- -IMAGEN REPRESENTATIVA -->
     <meta property="og:image" content="">
     <!-- #### TITLE #### -->
-    <title>Portafolio - JPBarcia</title>
+    <title>Jean Pierre Barcia</title>
     <!-- #### FONTS #### -->
     <!-- Open Sans Condensed - Titles -->
     <!--link(href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700" rel="stylesheet")-->
@@ -34,10 +34,131 @@
     <!--link(href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i" rel="stylesheet")-->
     <!-- #### ICON ####-->
     <link rel="icon" href="assets/img/favicon.ico">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
   </head>
   <body>
-    <h1>Ejemplo</h1>
+    <div class="toggle-button"><span class="hamburguer"></span></div>
+    <div class="sidebar-wrapper">
+      <div class="sidebar-title">
+        <h1>Jean Pierre<br>Barcia</h1>
+      </div>
+      <nav class="sidebar-menu">
+        <ul>
+          <li><a href="#home">Acerca de</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#honors">Méritos</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="wrapper">
+      <section id="home" class="home">
+        <div class="background">
+          <h1>Jean Pierre Barcia</h1>
+        </div>
+        <div class="container">
+          <div class="left-side">
+            <h2><span>Soy </span>Jean Pierre Barcia</h2>
+            <h3>UX/UI Designer</h3>
+            <h3>Front End Developer</h3>
+          </div>
+          <div class="right-side">
+            <p>Soy un estudiante de la carrera de Ingeniería de Software, estoy en el 8˚ ciclo en el décimo superior.</p>
+            <p>Me especializo en UX/UI Design y Front-End Development, además me encuentro en el equipo de Programación Competitiva de mi universidad.</p>
+            <p>Si quieres ponerte en contacto conmigo, hazlo <a href="#contact">aquí</a>, o si quieres ver mi resumé hazlo <a href="/jpbarcia.docx">aquí</a>.</p>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </section>
+      <section id="projects" class="projects">
+        <div class="background">
+          <h1>Proyectos</h1>
+        </div>
+        <div class="title">
+          <h2>Mis Proyectos</h2>
+        </div>
+        <div class="container"><a href="#" class="project">
+            <div class="project-title">Blog</div>
+            <div style="background-image: url('assets/img/default.png')" class="project-image"></div></a><a href="#" class="project">
+            <div class="project-title">Blog</div>
+            <div style="background-image: url('assets/img/default.png')" class="project-image"></div></a><a href="#" class="project">
+            <div class="project-title">Blog</div>
+            <div style="background-image: url('assets/img/default.png')" class="project-image"></div></a>
+          <div class="clearfix"></div>
+        </div>
+      </section>
+      <section id="experience" class="experience">
+        <div class="background">
+          <h1>Experiencia</h1>
+        </div>
+        <div class="title">
+          <h2>Experiencia</h2>
+        </div>
+        <div class="container">
+          <div class="right-icon">{}</div>
+          <div class="jobs">
+            <ul>
+              <li>Freelancer <span class="date">11/2015 - hoy</span></li>
+              <li>GMD - FrontEnd Developer <span class="date">07/2016 - hoy</span></li>
+              <li>Programación Competitiva <span class="date">05/2015 - hoy</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="honors" class="honors">
+        <div class="background">
+          <h1>Méritos</h1>
+        </div>
+        <div class="title">
+          <h2>Méritos</h2>
+        </div>
+        <div class="container">
+          <div class="right-icon">;</div>
+          <div class="merits">
+            <ul>
+              <li>10˚ puesto ICPC 2015 - Perú Programación Competitiva (Equipo No Code No Life)</li>
+              <li>1˚ puesto CONEISC 2016 Programación Competitiva (Equipo INSANECodeOverride)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="contact" class="contact">
+        <div class="background">
+          <h1>Contacto</h1>
+        </div>
+        <div class="title">
+          <h2>Contacto</h2>
+        </div>
+        <div class="container">
+          <div class="right-icon">++</div>
+          <div class="social"><a href="#"><i class="fa fa-facebook-square"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-github"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></div>
+          <div class="subtitle">
+            <h3>¡Enviame un mensaje!</h3>
+          </div>
+          <div class="form">
+            <form>
+              <div class="name">
+                <input type="text" placeholder="Nombre">
+              </div>
+              <div class="email">
+                <input type="email" placeholder="Email">
+              </div>
+              <div class="message">
+                <textarea placeholder="Escribe tu mensaje aquí..."></textarea>
+              </div>
+              <div class="clearfix"></div>
+              <div class="send">
+                <button type="submit">Enviar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="assets/js/jquery-3.1.0.min.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
